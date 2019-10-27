@@ -1,18 +1,15 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import axios from "axios";
-import { Menu, Row, Col, Layout } from "antd";
+import { Row, Col, Layout } from "antd";
+import { navbarItem } from "../types";
 import {
+  Header as PageHeader,
   Image,
   Duration,
   RegisterButton,
   Footer as PageFooter
 } from "../components";
 import { t } from "../i18n";
-
-interface navbarItem {
-  label?: string;
-  href?: string;
-}
 
 interface PanJS {
   navbarItems?: navbarItem[];
@@ -58,46 +55,24 @@ const HomePage: FunctionComponent = () => {
       <Layout>
         <Header className="header">
           {API.navbarItems && API.navbarItems.length === 3 && (
-            <Menu selectable mode="horizontal">
-              <Col span={8}>
-                <Menu.Item key="alipay">
-                  <a
-                    href={API.navbarItems[0].href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {API.navbarItems[0].label}
-                  </a>
-                </Menu.Item>
-              </Col>
-              <Col span={8}>
-                <Menu.Item key="wefw">
-                  <a
-                    href={API.navbarItems[1].href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {API.navbarItems[1].label}
-                  </a>
-                </Menu.Item>
-              </Col>
-              <Col span={8}>
-                <Menu.Item key="azz">
-                  <a
-                    href={API.navbarItems[2].href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {API.navbarItems[2].label}
-                  </a>
-                </Menu.Item>
-              </Col>
-            </Menu>
+            <PageHeader navbars={API.navbarItems} />
           )}
         </Header>
         <Layout>
           <Content>
             <Row justify="space-around" type="flex">
+              <Col>
+                <Image
+                  src={
+                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/logo/banner.png"
+                  }
+                  style={{
+                    position: "absolute",
+                    zIndex: 2,
+                    width: "fit-content"
+                  }}
+                ></Image>
+              </Col>
               <Col span={4}>
                 <Image
                   src={
