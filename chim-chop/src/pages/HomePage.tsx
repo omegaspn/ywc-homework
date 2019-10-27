@@ -42,18 +42,13 @@ const HomePage: FunctionComponent = () => {
     fetchAPI();
   }, []);
 
-  const createDetail = () => {
-    return { __html: API.detail };
-  };
-
-  const createCondition = () => {
-    return { __html: API.condition };
-  };
-
   return (
     <>
       <Layout>
-        <Header className="header">
+        <Header
+          className="header"
+          style={{ height: "fit-content", backgroundColor: "#fff" }}
+        >
           {API.navbarItems && API.navbarItems.length === 3 && (
             <PageHeader navbars={API.navbarItems} />
           )}
@@ -108,13 +103,13 @@ const HomePage: FunctionComponent = () => {
               </div>
             </Row>
             <Row type="flex" justify="center">
-              <div dangerouslySetInnerHTML={createDetail()} />
+              <div dangerouslySetInnerHTML={{ __html: API.detail }} />
             </Row>
             <Row type="flex" justify="center">
               <b>{t.conditionTitle}</b>
             </Row>
             <Row type="flex" justify="center">
-              <div dangerouslySetInnerHTML={createCondition()} />
+              <div dangerouslySetInnerHTML={{ __html: API.condition }} />
             </Row>
             <Row>
               <Col span={8}>
@@ -152,28 +147,28 @@ const HomePage: FunctionComponent = () => {
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/FPO.png"
                   }
-                ></Image>
+                />
               </Col>
               <Col span={4}>
                 <Image
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/CGD.png"
                   }
-                ></Image>
+                />
               </Col>
               <Col span={4}>
                 <Image
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOTS.png"
                   }
-                ></Image>
+                />
               </Col>
               <Col span={4}>
                 <Image
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/TAT.png"
                   }
-                ></Image>
+                />
               </Col>
             </Row>
           </Content>

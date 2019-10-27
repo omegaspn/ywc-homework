@@ -7,10 +7,14 @@ export const RegisterButton: FunctionComponent = () => {
     <Row type="flex" align="middle" justify="center">
       <Button
         type="primary"
-        style={{ backgroundColor: "#213A8F" }}
+        style={{
+          backgroundColor: "#213A8F",
+          height: "fit-content",
+          width: "70%"
+        }}
         href="https://regist.ชิมช้อปใช้.com/Register/"
       >
-        {t.blueCardContent}
+        <div dangerouslySetInnerHTML={{ __html: t.blueCardContent }}></div>
       </Button>
     </Row>
   );

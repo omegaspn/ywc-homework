@@ -9,8 +9,6 @@ interface RenderFooterDetailProps {
 }
 
 export const Footer: FunctionComponent = () => {
-  console.log("length", Object.keys(t.footer).length);
-
   const RenderFooterDetail: FunctionComponent<RenderFooterDetailProps> = ({
     head,
     detail
@@ -22,16 +20,15 @@ export const Footer: FunctionComponent = () => {
             fontSize: "18px",
             color: "#E6332A"
           }}
-        >
-          {head}
-        </div>
+          dangerouslySetInnerHTML={{ __html: head }}
+        />
+
         <div
           style={{
             fontSize: "18px"
           }}
-        >
-          {detail}
-        </div>
+          dangerouslySetInnerHTML={{ __html: detail }}
+        />
       </>
     );
   };

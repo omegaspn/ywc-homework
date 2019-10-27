@@ -14,7 +14,11 @@ export const Header: FunctionComponent<HeaderProps> = ({ navbars }) => {
       <Menu
         selectable
         mode="horizontal"
-        style={{ display: "flex", justifyContent: "space-around" }}
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          border: "none"
+        }}
       >
         <Item key="register">
           <a href={navbars[0].href} target="_blank" rel="noopener noreferrer">
