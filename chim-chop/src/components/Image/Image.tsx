@@ -8,9 +8,10 @@ interface ImageProps {
 
 export const Image: FunctionComponent<ImageProps> = ({ src, style }) => {
   return (
-    <Card
-      bordered={false}
-      cover={<img alt="example" src={src} style={style} />}
-    ></Card>
+    <img alt="example" src={src} style={style} />
+    // <Card
+    //   bordered={false}
+    //   cover={<img alt="example" src={src} style={style} />}
+    // ></Card>
   );
 };

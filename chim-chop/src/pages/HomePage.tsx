@@ -54,7 +54,7 @@ const HomePage: FunctionComponent = () => {
           )}
         </Header>
         <Layout>
-          <Content>
+          <Content style={{ backgroundColor: "#fff" }}>
             <Row justify="space-around" type="flex">
               <Col>
                 <Image
@@ -68,25 +68,28 @@ const HomePage: FunctionComponent = () => {
                   }}
                 ></Image>
               </Col>
-              <Col span={4}>
+              <Col span={8}>
                 <Image
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-left.png"
                   }
+                  style={{ width: "-webkit-fill-available", height: "350px" }}
                 ></Image>
               </Col>
-              <Col span={4}>
+              <Col span={8}>
                 <Image
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png"
                   }
+                  style={{ width: "-webkit-fill-available", height: "350px" }}
                 ></Image>
               </Col>
-              <Col span={4}>
+              <Col span={8}>
                 <Image
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-right.png"
                   }
+                  style={{ width: "-webkit-fill-available", height: "350px" }}
                 ></Image>
               </Col>
             </Row>
@@ -140,6 +143,7 @@ const HomePage: FunctionComponent = () => {
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOF.png"
                   }
+                  style={{ width: "102px" }}
                 ></Image>
               </Col>
               <Col span={4}>
@@ -147,6 +151,7 @@ const HomePage: FunctionComponent = () => {
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/FPO.png"
                   }
+                  style={{ width: "102px" }}
                 />
               </Col>
               <Col span={4}>
@@ -154,6 +159,7 @@ const HomePage: FunctionComponent = () => {
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/CGD.png"
                   }
+                  style={{ width: "102px" }}
                 />
               </Col>
               <Col span={4}>
@@ -161,6 +167,7 @@ const HomePage: FunctionComponent = () => {
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOTS.png"
                   }
+                  style={{ width: "102px" }}
                 />
               </Col>
               <Col span={4}>
@@ -168,6 +175,7 @@ const HomePage: FunctionComponent = () => {
                   src={
                     "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/TAT.png"
                   }
+                  style={{ width: "102px" }}
                 />
               </Col>
             </Row>

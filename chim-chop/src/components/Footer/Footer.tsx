@@ -39,6 +39,7 @@ export const Footer: FunctionComponent = () => {
         <Col span={4}>
           <Image
             src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/logo/footer.png"}
+            style={{ width: "108px" }}
           ></Image>
         </Col>
         <Col span={4}>
