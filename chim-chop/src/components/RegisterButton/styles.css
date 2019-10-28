@@ -1,0 +1,7 @@
+.registerButton:hover {
+  background-color: #fbbc33 !important;
+}
+
+.registerButton {
+  border: none !important;
+}

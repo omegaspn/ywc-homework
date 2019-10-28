@@ -1,17 +1,14 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import axios from "axios";
-import { Row, Col, Layout } from "antd";
+import { Layout } from "antd";
 import { navbarItem } from "../types";
 import {
   Header as PageHeader,
-  Image,
-  Duration,
-  RegisterButton,
+  Content as PageContent,
   Footer as PageFooter
 } from "../components";
-import { t } from "../i18n";
 
-interface PanJS {
+interface APIModel {
   navbarItems?: navbarItem[];
   duration?: string;
   detail?: any;
@@ -26,7 +23,7 @@ const init = {
 };
 
 const HomePage: FunctionComponent = () => {
-  const [API, setAPI] = useState<PanJS>(init);
+  const [API, setAPI] = useState<APIModel>(init);
   const { Header, Sider, Content, Footer } = Layout;
 
   const fetchAPI = async () => {
@@ -54,137 +51,18 @@ const HomePage: FunctionComponent = () => {
           )}
         </Header>
         <Layout>
-          <Content style={{ backgroundColor: "#fff" }}>
-            <Row justify="space-around" type="flex">
-              <Col>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/logo/banner.png"
-                  }
-                  style={{
-                    position: "absolute",
-                    zIndex: 2,
-                    width: "fit-content"
-                  }}
-                ></Image>
-              </Col>
-              <Col span={8}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-left.png"
-                  }
-                  style={{ width: "-webkit-fill-available", height: "350px" }}
-                ></Image>
-              </Col>
-              <Col span={8}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png"
-                  }
-                  style={{ width: "-webkit-fill-available", height: "350px" }}
-                ></Image>
-              </Col>
-              <Col span={8}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-right.png"
-                  }
-                  style={{ width: "-webkit-fill-available", height: "350px" }}
-                ></Image>
-              </Col>
-            </Row>
-            <Duration duration={API.duration || ""} />
-            <RegisterButton />
-            <Row type="flex" justify="center">
-              <div
-                style={{
-                  fontSize: "32px",
-                  color: "#E6332A"
-                }}
-              >
-                {t.highLightText}
-              </div>
-            </Row>
-            <Row type="flex" justify="center">
-              <div dangerouslySetInnerHTML={{ __html: API.detail }} />
-            </Row>
-            <Row type="flex" justify="center">
-              <b>{t.conditionTitle}</b>
-            </Row>
-            <Row type="flex" justify="center">
-              <div dangerouslySetInnerHTML={{ __html: API.condition }} />
-            </Row>
-            <Row>
-              <Col span={8}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_KTB_SQ.png"
-                  }
-                ></Image>
-              </Col>
-              <Col span={8}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_CGD_Sq.png"
-                  }
-                ></Image>
-              </Col>
-              <Col span={8}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_TAT_Hotline_Sq.png"
-                  }
-                ></Image>
-              </Col>
-            </Row>
-            <Row justify="space-around" type="flex">
-              <Col span={4}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOF.png"
-                  }
-                  style={{ width: "102px" }}
-                ></Image>
-              </Col>
-              <Col span={4}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/FPO.png"
-                  }
-                  style={{ width: "102px" }}
-                />
-              </Col>
-              <Col span={4}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/CGD.png"
-                  }
-                  style={{ width: "102px" }}
-                />
-              </Col>
-              <Col span={4}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOTS.png"
-                  }
-                  style={{ width: "102px" }}
-                />
-              </Col>
-              <Col span={4}>
-                <Image
-                  src={
-                    "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/TAT.png"
-                  }
-                  style={{ width: "102px" }}
-                />
-              </Col>
-            </Row>
+          <Content className="content" style={{ backgroundColor: "#fff" }}>
+            <PageContent
+              duration={API.duration}
+              detail={API.detail}
+              condition={API.condition}
+            />
           </Content>
-          <Sider collapsible collapsedWidth={0} theme="light">
+          <Sider collapsible defaultCollapsed collapsedWidth={0} theme="light">
             Sider
           </Sider>
         </Layout>
-        <Footer>
+        <Footer className="footer">
           <PageFooter />
         </Footer>
       </Layout>

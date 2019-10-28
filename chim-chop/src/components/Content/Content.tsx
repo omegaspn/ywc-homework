@@ -1,0 +1,153 @@
+import React, { FunctionComponent } from "react";
+import { t } from "../../i18n";
+import { Row, Col } from "antd";
+import { Image, Duration, RegisterButton } from "../../components";
+import "./styles.css";
+
+interface ContentProps {
+  duration?: string;
+  detail?: any;
+  condition?: any;
+}
+
+export const Content: FunctionComponent<ContentProps> = ({
+  duration,
+  detail,
+  condition
+}) => {
+  return (
+    <>
+      <Row justify="space-around" type="flex">
+        <Col style={{ position: "absolute", display: "contents" }}>
+          <img
+            alt="example"
+            src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/logo/banner.png"}
+            style={{
+              position: "absolute",
+              zIndex: 2,
+              width: "fit-content",
+              paddingTop: "30px"
+            }}
+          />
+        </Col>
+
+        <Image
+          src={
+            "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-left.png"
+          }
+          span={8}
+          xsSpan={24}
+          style={{ width: "-webkit-fill-available", height: "350px" }}
+        ></Image>
+
+        <Image
+          src={
+            "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png"
+          }
+          span={8}
+          xsSpan={24}
+          style={{ width: "-webkit-fill-available", height: "350px" }}
+        ></Image>
+
+        <Image
+          src={
+            "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-right.png"
+          }
+          span={8}
+          xsSpan={24}
+          style={{ width: "-webkit-fill-available", height: "350px" }}
+        ></Image>
+      </Row>
+      <Duration duration={duration || ""} />
+      <RegisterButton />
+
+      <Row className="mainText">
+        <div
+          style={{
+            fontSize: "32px",
+            color: "#E6332A",
+            paddingTop: "20px",
+            paddingBottom: "20px"
+          }}
+        >
+          {t.highLightText}
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: detail }} />
+        <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+          <b>{t.conditionTitle}</b>
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: condition }} />
+      </Row>
+
+      <Row style={{ textAlign: "center" }}>
+        <Image
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_KTB_SQ.png"}
+          span={8}
+          xsSpan={24}
+          style={{ width: "100%" }}
+        ></Image>
+
+        <Image
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_CGD_Sq.png"}
+          span={8}
+          xsSpan={24}
+          style={{ width: "100%" }}
+        ></Image>
+
+        <Image
+          src={
+            "https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_TAT_Hotline_Sq.png"
+          }
+          span={8}
+          xsSpan={24}
+          style={{ width: "100%" }}
+        ></Image>
+      </Row>
+      <Row style={{ textAlign: "center" }}>
+        <Image
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOF.png"}
+          span={4}
+          xsSpan={8}
+          style={{ width: "102px" }}
+        ></Image>
+
+        <Image
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/FPO.png"}
+          span={4}
+          xsSpan={8}
+          style={{ width: "102px" }}
+        />
+
+        <Image
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/CGD.png"}
+          span={4}
+          xsSpan={8}
+          style={{ width: "102px" }}
+        />
+
+        <Image
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOTS.png"}
+          span={4}
+          xsSpan={8}
+          style={{ width: "102px" }}
+        />
+
+        <Image
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/TAT.png"}
+          span={4}
+          xsSpan={8}
+          style={{ width: "102px" }}
+        />
+
+        <Image
+          src={
+            "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/Krungthai.png"
+          }
+          span={4}
+          xsSpan={8}
+          style={{ width: "102px" }}
+        />
+      </Row>
+    </>
+  );
+};
