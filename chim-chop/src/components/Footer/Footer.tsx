@@ -18,7 +18,8 @@ export const Footer: FunctionComponent = () => {
         <div
           style={{
             fontSize: "18px",
-            color: "#E6332A"
+            color: "#E6332A",
+            padding: "15px 0 10px 0"
           }}
           dangerouslySetInnerHTML={{ __html: head }}
         />
@@ -59,29 +60,6 @@ export const Footer: FunctionComponent = () => {
             head={t.footer.moreInfo.head}
             detail={t.footer.moreInfo.detail}
           ></RenderFooterDetail>
-        </Col>
-      </Row>
-      <Row
-        justify="space-around"
-        type="flex"
-        style={{
-          backgroundColor: "#213A8F",
-          position: "absolute",
-          width: "100%",
-          left: 0
-        }}
-      >
-        <Col span={4} xs={24} md={4} lg={4} style={{ color: "#fff" }}>
-          {t.footerNav.detail}
-        </Col>
-        <Col span={4} xs={24} md={4} lg={4} style={{ color: "#fff" }}>
-          {t.footerNav.detail2}
-        </Col>
-        <Col span={4} xs={24} md={4} lg={4} style={{ color: "#fff" }}>
-          {t.footerNav.detail3}
-        </Col>
-        <Col span={4} xs={24} md={4} lg={4} style={{ color: "#fff" }}>
-          {t.footerNav.detail4}
         </Col>
       </Row>
     </>

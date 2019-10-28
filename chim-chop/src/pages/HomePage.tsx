@@ -4,8 +4,10 @@ import { Layout } from "antd";
 import { navbarItem } from "../types";
 import {
   Header as PageHeader,
+  MobileHeader,
   Content as PageContent,
-  Footer as PageFooter
+  Footer as PageFooter,
+  SecondFooter
 } from "../components";
 
 interface APIModel {
@@ -24,6 +26,8 @@ const init = {
 
 const HomePage: FunctionComponent = () => {
   const [API, setAPI] = useState<APIModel>(init);
+  const [isMobile, setIsMobile] = useState(false);
+
   const { Header, Sider, Content, Footer } = Layout;
 
   const fetchAPI = async () => {
@@ -44,11 +48,16 @@ const HomePage: FunctionComponent = () => {
       <Layout>
         <Header
           className="header"
-          style={{ height: "fit-content", backgroundColor: "#fff" }}
+          style={{
+            height: "fit-content",
+            backgroundColor: "#fff",
+            padding: "0 20px 0 20px"
+          }}
         >
-          {API.navbarItems && API.navbarItems.length === 3 && (
+          {API.navbarItems && API.navbarItems.length === 3 && !isMobile && (
             <PageHeader navbars={API.navbarItems} />
           )}
+          {isMobile && <MobileHeader />}
         </Header>
         <Layout>
           <Content className="content" style={{ backgroundColor: "#fff" }}>
@@ -58,12 +67,22 @@ const HomePage: FunctionComponent = () => {
               condition={API.condition}
             />
           </Content>
-          <Sider collapsible defaultCollapsed collapsedWidth={0} theme="light">
-            Sider
-          </Sider>
+
+          <Sider
+            defaultCollapsed
+            collapsedWidth={0}
+            breakpoint="md"
+            onBreakpoint={broken => {
+              setIsMobile(broken);
+            }}
+            trigger={null}
+          />
         </Layout>
         <Footer className="footer">
           <PageFooter />
+        </Footer>
+        <Footer className="footer-2">
+          <SecondFooter />
         </Footer>
       </Layout>
     </>

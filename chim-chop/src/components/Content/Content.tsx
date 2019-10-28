@@ -17,7 +17,7 @@ export const Content: FunctionComponent<ContentProps> = ({
 }) => {
   return (
     <>
-      <Row justify="space-around" type="flex">
+      <Row type="flex" justify="space-around" align="middle">
         <Col style={{ position: "absolute", display: "contents" }}>
           <img
             alt="example"
@@ -36,7 +36,7 @@ export const Content: FunctionComponent<ContentProps> = ({
             "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-left.png"
           }
           span={8}
-          xsSpan={24}
+          xsSpan={8}
           style={{ width: "-webkit-fill-available", height: "350px" }}
         ></Image>
 
@@ -45,7 +45,7 @@ export const Content: FunctionComponent<ContentProps> = ({
             "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png"
           }
           span={8}
-          xsSpan={24}
+          xsSpan={8}
           style={{ width: "-webkit-fill-available", height: "350px" }}
         ></Image>
 
@@ -54,7 +54,7 @@ export const Content: FunctionComponent<ContentProps> = ({
             "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-right.png"
           }
           span={8}
-          xsSpan={24}
+          xsSpan={8}
           style={{ width: "-webkit-fill-available", height: "350px" }}
         ></Image>
       </Row>
