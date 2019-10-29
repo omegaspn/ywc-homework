@@ -5,7 +5,6 @@ import { Duration } from "./Duration/Duration";
 import { Content } from "./Content/Content";
 import { RegisterButton } from "./RegisterButton/RegisterButton";
 import { Footer } from "./Footer/Footer";
-import { SecondFooter } from "./Footer/SecondFooter";
 
 export {
   Header,
@@ -14,6 +13,5 @@ export {
   Duration,
   Content,
   RegisterButton,
-  Footer,
-  SecondFooter
+  Footer
 };

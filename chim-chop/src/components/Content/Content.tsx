@@ -58,8 +58,10 @@ export const Content: FunctionComponent<ContentProps> = ({
           style={{ width: "-webkit-fill-available", height: "350px" }}
         ></Image>
       </Row>
-      <Duration duration={duration || ""} />
-      <RegisterButton />
+      <Row className="registerBox" style={{ margin: "26px 0" }}>
+        <Duration duration={duration || ""} />
+        <RegisterButton />
+      </Row>
 
       <Row className="mainText">
         <div

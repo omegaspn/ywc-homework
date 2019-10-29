@@ -2,13 +2,18 @@ import React, { FunctionComponent } from "react";
 import { Row, Col } from "antd";
 import { Image } from "../../components";
 import { t } from "../../i18n";
+import { navbarItem } from "../../types";
 
 interface RenderFooterDetailProps {
   head: string;
   detail: string;
 }
 
-export const Footer: FunctionComponent = () => {
+interface FooterProps {
+  navbars: navbarItem[];
+}
+
+export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
   const RenderFooterDetail: FunctionComponent<RenderFooterDetailProps> = ({
     head,
     detail
@@ -35,8 +40,8 @@ export const Footer: FunctionComponent = () => {
   };
 
   return (
-    <>
-      <Row justify="space-around" type="flex">
+    <Row>
+      <Row justify="space-around" type="flex" style={{ padding: "24px 50px" }}>
         <Image
           src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/logo/footer.png"}
           span={4}
@@ -62,6 +67,41 @@ export const Footer: FunctionComponent = () => {
           ></RenderFooterDetail>
         </Col>
       </Row>
-    </>
+      <Row
+        justify="space-around"
+        type="flex"
+        style={{
+          backgroundColor: "#213A8F",
+          position: "absolute",
+          left: "0",
+          right: "0",
+          paddingLeft: "50px",
+          paddingRight: "50px"
+        }}
+      >
+        {Object.values(t.footerNav).map((detail, id) => (
+          <Col
+            key={id}
+            span={4}
+            xs={24}
+            md={4}
+            lg={4}
+            style={{ paddingTop: "10px", paddingBottom: "10px" }}
+          >
+            {/* map details (size 4) and navbar (size 3), prevent details in first loop
+             because first detail won't required href*/}
+            <a
+              key={id}
+              href={id !== 0 ? navbars[id - 1].href : ""}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#fff" }}
+            >
+              {detail}
+            </a>
+          </Col>
+        ))}
+      </Row>
+    </Row>
   );
 };

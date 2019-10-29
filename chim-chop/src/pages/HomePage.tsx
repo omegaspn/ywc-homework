@@ -6,8 +6,7 @@ import {
   Header as PageHeader,
   MobileHeader,
   Content as PageContent,
-  Footer as PageFooter,
-  SecondFooter
+  Footer as PageFooter
 } from "../components";
 
 interface APIModel {
@@ -18,7 +17,7 @@ interface APIModel {
 }
 
 const init = {
-  navbarItems: [{ label: "", href: "" }],
+  navbarItems: [],
   duration: "",
   detail: "",
   condition: ""
@@ -75,14 +74,14 @@ const HomePage: FunctionComponent = () => {
             onBreakpoint={broken => {
               setIsMobile(broken);
             }}
-            trigger={null}
+            zeroWidthTriggerStyle={{ top: "0", right: "0" }}
+            // trigger={null}
           />
         </Layout>
-        <Footer className="footer">
-          <PageFooter />
-        </Footer>
-        <Footer className="footer-2">
-          <SecondFooter />
+        <Footer className="footer" style={{ padding: "0" }}>
+          {API.navbarItems && API.navbarItems.length === 3 && (
+            <PageFooter navbars={API.navbarItems} />
+          )}
         </Footer>
       </Layout>
     </>
