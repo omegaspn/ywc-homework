@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from "react";
 
 interface TextProps {
-  style: any;
+  style?: any;
   // css properties
+  dangerouslySetInnerHTML?: { __html: string };
 }
 
 export const Text: FunctionComponent<TextProps> = props => {

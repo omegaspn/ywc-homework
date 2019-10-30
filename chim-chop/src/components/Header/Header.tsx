@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Menu } from "antd";
+import { Text } from "../../components";
 import { navbarItem } from "../../types";
 
 interface HeaderProps {
@@ -8,33 +9,36 @@ interface HeaderProps {
 
 export const Header: FunctionComponent<HeaderProps> = ({ navbars }) => {
   const { Item } = Menu;
-
   return (
     <>
       <Menu
         selectable
         mode="horizontal"
         style={{
+          position: "fixed",
+          left: 0,
+          right: 0,
+          zIndex: 3,
           display: "flex",
           justifyContent: "space-around",
-          border: "none"
+          border: "none",
+          boxShadow: "0 15px 30px 0 rgba(28, 78, 132, 0.4)",
         }}
       >
-        <Item key="register">
-          <a href={navbars[0].href} target="_blank" rel="noopener noreferrer">
-            {navbars[0].label}
-          </a>
-        </Item>
-        <Item key="process">
-          <a href={navbars[1].href} target="_blank" rel="noopener noreferrer">
-            {navbars[1].label}
-          </a>
-        </Item>
-        <Item key="shop">
-          <a href={navbars[2].href} target="_blank" rel="noopener noreferrer">
-            {navbars[2].label}
-          </a>
-        </Item>
+        {Array.from(Array(3).keys()).map((x, id) => (
+          <Item key={id}>
+            <Text style={{ fontFamily: "TATSanaChon" }}>
+              <a
+                href={navbars[id].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#333333" }}
+              >
+                {navbars[id].label}
+              </a>
+            </Text>
+          </Item>
+        ))}
       </Menu>
     </>
   );

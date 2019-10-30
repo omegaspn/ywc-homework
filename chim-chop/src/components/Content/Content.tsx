@@ -63,11 +63,18 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
         >
           <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.highLightText}</Text>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: detail }} />
+        <Text
+          style={{ fontFamily: "TATSanaSuksa" }}
+          dangerouslySetInnerHTML={{ __html: detail }}
+        ></Text>
+        <div />
         <div style={{ marginTop: "20px", marginBottom: "20px" }}>
           <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.conditionTitle}</Text>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: condition }} />
+        <Text
+          style={{ fontFamily: "TATSanaSuksa" }}
+          dangerouslySetInnerHTML={{ __html: condition }}
+        ></Text>
       </Row>
 
       <Row style={{ textAlign: "center" }}>

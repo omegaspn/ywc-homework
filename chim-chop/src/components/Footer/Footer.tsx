@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Row, Col } from "antd";
-import { Image } from "../../components";
+import { Image, Text } from "../../components";
 import { t } from "../../i18n";
 import { navbarItem } from "../../types";
 
@@ -14,28 +14,30 @@ interface FooterProps {
 }
 
 export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
-  const RenderFooterDetail: FunctionComponent<RenderFooterDetailProps> = ({
-    head,
-    detail
-  }) => {
+  const RenderFooterDetail: FunctionComponent<RenderFooterDetailProps> = ({ head, detail }) => {
     return (
-      <>
-        <div
-          style={{
-            fontSize: "18px",
-            color: "#E6332A",
-            padding: "15px 0 10px 0"
-          }}
-          dangerouslySetInnerHTML={{ __html: head }}
-        />
-
-        <div
-          style={{
-            fontSize: "18px"
-          }}
-          dangerouslySetInnerHTML={{ __html: detail }}
-        />
-      </>
+      <Row>
+        <Col>
+          <Text
+            style={{
+              fontFamily: "TATSanaSuksa",
+              fontSize: "18px",
+              color: "#E6332A",
+              padding: "15px 0 10px 0",
+            }}
+            dangerouslySetInnerHTML={{ __html: head }}
+          ></Text>
+        </Col>
+        <Col>
+          <Text
+            style={{
+              fontFamily: "TATSanaSuksa",
+              fontSize: "18px",
+            }}
+            dangerouslySetInnerHTML={{ __html: detail }}
+          ></Text>
+        </Col>
+      </Row>
     );
   };
 
@@ -76,7 +78,7 @@ export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
           left: "0",
           right: "0",
           paddingLeft: "50px",
-          paddingRight: "50px"
+          paddingRight: "50px",
         }}
       >
         {Object.values(t.footerNav).map((detail, id) => (
@@ -90,15 +92,17 @@ export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
           >
             {/* map details (size 4) and navbar (size 3), prevent details in first loop
              because first detail won't required href*/}
-            <a
-              key={id}
-              href={id !== 0 ? navbars[id - 1].href : ""}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#fff" }}
-            >
-              {detail}
-            </a>
+            <Text style={{ fontFamily: "TATSanaSuksaBold" }}>
+              <a
+                key={id}
+                href={id !== 0 ? navbars[id - 1].href : ""}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#fff" }}
+              >
+                {detail}
+              </a>
+            </Text>
           </Col>
         ))}
       </Row>

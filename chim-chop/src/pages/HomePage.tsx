@@ -6,7 +6,7 @@ import {
   Header as PageHeader,
   MobileHeader,
   Content as PageContent,
-  Footer as PageFooter
+  Footer as PageFooter,
 } from "../components";
 
 interface APIModel {
@@ -20,7 +20,7 @@ const init = {
   navbarItems: [],
   duration: "",
   detail: "",
-  condition: ""
+  condition: "",
 };
 
 const HomePage: FunctionComponent = () => {
@@ -50,7 +50,7 @@ const HomePage: FunctionComponent = () => {
           style={{
             height: "fit-content",
             backgroundColor: "#fff",
-            padding: "0 20px 0 20px"
+            padding: "0 20px 0 20px",
           }}
         >
           {API.navbarItems && API.navbarItems.length === 3 && !isMobile && (
@@ -60,22 +60,18 @@ const HomePage: FunctionComponent = () => {
         </Header>
         <Layout>
           <Content className="content" style={{ backgroundColor: "#fff" }}>
-            <PageContent
-              duration={API.duration}
-              detail={API.detail}
-              condition={API.condition}
-            />
+            <PageContent duration={API.duration} detail={API.detail} condition={API.condition} />
           </Content>
 
           <Sider
-            defaultCollapsed
+            collapsed
             collapsedWidth={0}
             breakpoint="md"
             onBreakpoint={broken => {
               setIsMobile(broken);
             }}
             zeroWidthTriggerStyle={{ top: "0", right: "0" }}
-            // trigger={null}
+            trigger={null}
           />
         </Layout>
         <Footer className="footer" style={{ padding: "0" }}>
