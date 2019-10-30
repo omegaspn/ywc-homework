@@ -12,7 +12,7 @@ export const Duration: FunctionComponent<DurationProps> = ({ duration }) => {
       <Row type="flex" justify="center">
         <div
           style={{
-            fontSize: "16px"
+            fontSize: "16px",
           }}
         >
           {t.fromDate}
@@ -22,7 +22,7 @@ export const Duration: FunctionComponent<DurationProps> = ({ duration }) => {
         <div
           style={{
             fontSize: "32px",
-            color: "#E6332A"
+            color: "#E6332A",
           }}
         >
           {duration}

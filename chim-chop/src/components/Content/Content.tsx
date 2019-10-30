@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { t } from "../../i18n";
 import { Row, Col } from "antd";
-import { Image, Duration, RegisterButton } from "../../components";
+import { Image, Text, Duration, RegisterButton } from "../../components";
 import "./styles.css";
 
 interface ContentProps {
@@ -10,11 +10,7 @@ interface ContentProps {
   condition?: any;
 }
 
-export const Content: FunctionComponent<ContentProps> = ({
-  duration,
-  detail,
-  condition
-}) => {
+export const Content: FunctionComponent<ContentProps> = ({ duration, detail, condition }) => {
   return (
     <>
       <Row type="flex" justify="space-around" align="middle">
@@ -26,33 +22,27 @@ export const Content: FunctionComponent<ContentProps> = ({
               position: "absolute",
               zIndex: 2,
               width: "fit-content",
-              paddingTop: "30px"
+              paddingTop: "30px",
             }}
           />
         </Col>
 
         <Image
-          src={
-            "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-left.png"
-          }
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-left.png"}
           span={8}
           xsSpan={8}
           style={{ width: "-webkit-fill-available", height: "350px" }}
         ></Image>
 
         <Image
-          src={
-            "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png"
-          }
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png"}
           span={8}
           xsSpan={8}
           style={{ width: "-webkit-fill-available", height: "350px" }}
         ></Image>
 
         <Image
-          src={
-            "https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-right.png"
-          }
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-right.png"}
           span={8}
           xsSpan={8}
           style={{ width: "-webkit-fill-available", height: "350px" }}
@@ -62,21 +52,20 @@ export const Content: FunctionComponent<ContentProps> = ({
         <Duration duration={duration || ""} />
         <RegisterButton />
       </Row>
-
       <Row className="mainText">
         <div
           style={{
             fontSize: "32px",
             color: "#E6332A",
             paddingTop: "20px",
-            paddingBottom: "20px"
+            paddingBottom: "20px",
           }}
         >
-          {t.highLightText}
+          <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.highLightText}</Text>
         </div>
         <div dangerouslySetInnerHTML={{ __html: detail }} />
         <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-          <b>{t.conditionTitle}</b>
+          <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.conditionTitle}</Text>
         </div>
         <div dangerouslySetInnerHTML={{ __html: condition }} />
       </Row>
@@ -97,9 +86,7 @@ export const Content: FunctionComponent<ContentProps> = ({
         ></Image>
 
         <Image
-          src={
-            "https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_TAT_Hotline_Sq.png"
-          }
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_TAT_Hotline_Sq.png"}
           span={8}
           xsSpan={24}
           style={{ width: "100%" }}
@@ -142,9 +129,7 @@ export const Content: FunctionComponent<ContentProps> = ({
         />
 
         <Image
-          src={
-            "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/Krungthai.png"
-          }
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/Krungthai.png"}
           span={4}
           xsSpan={8}
           style={{ width: "102px" }}
