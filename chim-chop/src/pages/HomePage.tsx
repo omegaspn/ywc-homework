@@ -55,7 +55,9 @@ const HomePage: FunctionComponent = () => {
           {API.navbarItems && API.navbarItems.length === 3 && !isMobile && (
             <PageHeader navbars={API.navbarItems} />
           )}
-          {isMobile && <MobileHeader />}
+          {API.navbarItems && API.navbarItems.length === 3 && isMobile && (
+            <MobileHeader navbars={API.navbarItems} />
+          )}
         </Header>
         <Layout>
           <Content className="content" style={{ backgroundColor: "#fff", paddingTop: "47px" }}>

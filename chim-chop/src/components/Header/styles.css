@@ -1,5 +1,10 @@
 .hamburger > svg {
   width: 250%;
   height: auto;
-  padding-top: 20px;
+}
+
+.ant-collapse-header {
+  position: fixed !important;
+  top: 0;
+  right: 0;
 }

@@ -82,7 +82,13 @@ export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
         }}
       >
         {/* render first detail */}
-        <Col span={4} xs={24} md={4} lg={4} style={{ paddingTop: "10px", paddingBottom: "10px", color: "#fff" }}>
+        <Col
+          span={4}
+          xs={24}
+          md={4}
+          lg={4}
+          style={{ paddingTop: "10px", paddingBottom: "10px", color: "#fff" }}
+        >
           <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.footerNav.detail}</Text>
         </Col>
 
