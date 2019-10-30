@@ -49,7 +49,6 @@ const HomePage: FunctionComponent = () => {
           className="header"
           style={{
             height: "fit-content",
-            backgroundColor: "#fff",
             padding: "0 20px 0 20px",
           }}
         >
@@ -59,7 +58,7 @@ const HomePage: FunctionComponent = () => {
           {isMobile && <MobileHeader />}
         </Header>
         <Layout>
-          <Content className="content" style={{ backgroundColor: "#fff" }}>
+          <Content className="content" style={{ backgroundColor: "#fff", paddingTop: "47px" }}>
             <PageContent duration={API.duration} detail={API.detail} condition={API.condition} />
           </Content>
 

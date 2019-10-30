@@ -5,3 +5,9 @@
 .registerButton {
   border: none !important;
 }
+
+@media (min-width: 0px) and (max-width: 320px) {
+  .registerButton {
+    height: 184px !important;
+  }
+}

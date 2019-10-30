@@ -81,30 +81,37 @@ export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
           paddingRight: "50px",
         }}
       >
-        {Object.values(t.footerNav).map((detail, id) => (
-          <Col
-            key={id}
-            span={4}
-            xs={24}
-            md={4}
-            lg={4}
-            style={{ paddingTop: "10px", paddingBottom: "10px" }}
-          >
-            {/* map details (size 4) and navbar (size 3), prevent details in first loop
-             because first detail won't required href*/}
-            <Text style={{ fontFamily: "TATSanaSuksaBold" }}>
-              <a
+        {/* render first detail */}
+        <Col span={4} xs={24} md={4} lg={4} style={{ paddingTop: "10px", paddingBottom: "10px", color: "#fff" }}>
+          <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.footerNav.detail}</Text>
+        </Col>
+
+        {/* render last 3 details with href */}
+        {Object.values(t.footerNav).map(
+          (detail, id) =>
+            id !== 0 && (
+              <Col
                 key={id}
-                href={id !== 0 ? navbars[id - 1].href : ""}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#fff" }}
+                span={4}
+                xs={24}
+                md={4}
+                lg={4}
+                style={{ paddingTop: "10px", paddingBottom: "10px" }}
               >
-                {detail}
-              </a>
-            </Text>
-          </Col>
-        ))}
+                <Text style={{ fontFamily: "TATSanaSuksaBold" }}>
+                  <a
+                    key={id}
+                    href={navbars[id - 1].href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "#fff" }}
+                  >
+                    {detail}
+                  </a>
+                </Text>
+              </Col>
+            ),
+        )}
       </Row>
     </Row>
   );

@@ -14,39 +14,43 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
   return (
     <>
       <Row type="flex" justify="space-around" align="middle">
-        <Col style={{ position: "absolute", display: "contents" }}>
+        <Col
+          className="banner"
+          span={8}
+          style={{
+            backgroundImage:
+              "url(https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-left.png)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        ></Col>
+        <Col
+          className="banner"
+          span={8}
+          style={{
+            backgroundImage:
+              "url(https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
           <img
             alt="example"
             src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/logo/banner.png"}
-            style={{
-              position: "absolute",
-              zIndex: 2,
-              width: "fit-content",
-              paddingTop: "30px",
-            }}
+            style={{ display: "inline", width: "100%", height: "100%", padding: "30px 0" }}
           />
         </Col>
 
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-left.png"}
+        <Col
+          className="banner"
           span={8}
-          xsSpan={8}
-          style={{ width: "-webkit-fill-available", height: "350px" }}
-        ></Image>
-
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png"}
-          span={8}
-          xsSpan={8}
-          style={{ width: "-webkit-fill-available", height: "350px" }}
-        ></Image>
-
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-right.png"}
-          span={8}
-          xsSpan={8}
-          style={{ width: "-webkit-fill-available", height: "350px" }}
-        ></Image>
+          style={{
+            backgroundImage:
+              "url(https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-right.png)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        ></Col>
       </Row>
       <Row className="registerBox" style={{ margin: "26px 0" }}>
         <Duration duration={duration || ""} />
@@ -61,7 +65,9 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
             paddingBottom: "20px",
           }}
         >
-          <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.highLightText}</Text>
+          <Text className="font-highlight" style={{ fontFamily: "TATSanaSuksaBold" }}>
+            {t.highLightText}
+          </Text>
         </div>
         <Text
           style={{ fontFamily: "TATSanaSuksa" }}

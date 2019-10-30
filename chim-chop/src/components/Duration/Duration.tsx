@@ -14,7 +14,12 @@ export const Duration: FunctionComponent<DurationProps> = ({ duration }) => {
         <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.fromDate}</Text>
       </Row>
       <Row type="flex" justify="center">
-        <Text style={{ fontFamily: "TATSanaSuksaBold", color: "#E6332A" }}>{duration}</Text>
+        <Text
+          className="font-highlight"
+          style={{ fontFamily: "TATSanaSuksaBold", color: "#E6332A" }}
+        >
+          {duration}
+        </Text>
       </Row>
     </>
   );
