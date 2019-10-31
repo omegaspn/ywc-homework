@@ -4,6 +4,7 @@ import { Typography } from "antd";
 interface AntTitleProps {
   level?: 1 | 2 | 3 | 4;
   style?: any;
+  dangerouslySetInnerHTML?: any;
 }
 
 export const AntTitle: FunctionComponent<AntTitleProps> = props => {

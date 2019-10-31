@@ -31,16 +31,16 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
       url: "https://www.cgd.go.th",
     },
     {
+      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/Krungthai.png",
+      url: "https://thai.tourismthailand.org",
+    },
+    {
       src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOTS.png",
       url: "https://www.newcb.ktb.co.th",
     },
     {
       src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/TAT.png",
       url: "https://www.mots.go.th",
-    },
-    {
-      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/Krungthai.png",
-      url: "https://thai.tourismthailand.org",
     },
   ];
 
@@ -65,12 +65,15 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
               "url(https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <img
             alt="example"
             src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/logo/banner.png"}
-            style={{ display: "inline", width: "100%", height: "100%", padding: "30px 0" }}
+            style={{ display: "inline" }}
           />
         </Col>
 
@@ -97,7 +100,7 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
             paddingBottom: "20px",
             fontFamily: "TATSanaSuksaBold",
           }}
-          level={3}
+          level={2}
         >
           {t.highLightText}
         </AntTitle>
@@ -128,16 +131,10 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
           </a>
         ))}
       </Row>
-      <Row style={{ textAlign: "center" }}>
+      <Row className="thirdPartyContainer" style={{ textAlign: "center" }}>
         {thirdPartyURL.map((object, id) => (
           <a key={id} href={object.url} target="_blank" rel="noopener noreferrer">
-            <Image
-              imgClassName="thirdParty"
-              src={object.src}
-              span={4}
-              xsSpan={8}
-              style={{ width: "102px" }}
-            ></Image>
+            <Image src={object.src} span={4} xsSpan={8} style={{ width: "102px" }}></Image>
           </a>
         ))}
       </Row>

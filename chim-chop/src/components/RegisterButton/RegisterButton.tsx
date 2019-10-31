@@ -16,6 +16,10 @@ export const RegisterButton: FunctionComponent = () => {
           width: "100%",
           boxShadow: "0 15px 30px 0 rgba(28, 78, 132, 0.4)",
           whiteSpace: "normal",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "10px 0",
         }}
         href="https://regist.ชิมช้อปใช้.com/Register/"
       >

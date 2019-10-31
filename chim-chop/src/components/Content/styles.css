@@ -6,6 +6,9 @@
   .banner {
     height: 221px;
   }
+  .banner > img {
+    height: 131px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 375px) {
@@ -16,6 +19,9 @@
   .banner {
     height: 221px;
   }
+  .banner > img {
+    height: 131px;
+  }
 }
 
 @media (min-width: 375px) and (max-width: 425px) {
@@ -25,6 +31,9 @@
   }
   .banner {
     height: 221px;
+  }
+  .banner > img {
+    height: 131px;
   }
 }
 
@@ -39,6 +48,9 @@
   .banner {
     height: 242px;
   }
+  .banner > img {
+    height: 131px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -50,7 +62,10 @@
     font-size: 36px;
   }
   .banner {
-    height: 242px;
+    height: 350px;
+  }
+  .banner > img {
+    height: 133px;
   }
 }
 
@@ -63,14 +78,29 @@
     font-size: 36px;
   }
   .banner {
-    height: 242px;
+    height: 350px;
+  }
+  .banner > img {
+    height: 280px;
   }
 }
 
-.thirdParty {
-  transition: 1s;
+.thirdPartyContainer {
+  margin: 5em auto;
+  overflow: hidden;
+  position: relative;
 }
 
-.thirdParty:hover {
-  transform: scale(1.2);
+.thirdPartyContainer img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: -5px;
+  transition: all 0.3s ease-out;
+  position: relative;
+  /* z-index: 2; */
+}
+
+.thirdPartyContainer:hover img {
+  transform: scale(1.2, 1.2);
+  /* z-index: 3; */
 }

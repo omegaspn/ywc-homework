@@ -11,15 +11,15 @@ export const Duration: FunctionComponent<DurationProps> = ({ duration }) => {
   return (
     <>
       <Row type="flex" justify="center">
-        <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.fromDate}</Text>
+        <Text style={{ fontFamily: "TATSanaSuksaBold", color: "#333333" }}>{t.fromDate}</Text>
       </Row>
       <Row type="flex" justify="center">
         <AntTitle
           style={{
-            color: "#E6332A",
             fontFamily: "TATSanaSuksaBold",
+            color: "#E6332A",
           }}
-          level={3}
+          level={2}
         >
           {duration}
         </AntTitle>

@@ -14,17 +14,8 @@ export const MobileHeader: FunctionComponent<MobileHeaderProps> = ({ navbars }) 
   const NavBar: FunctionComponent = () => {
     return (
       <Collapse bordered={false} expandIconPosition={"right"} style={{ textAlign: "right" }}>
-        <Panel
-          header=""
-          key="1"
-          // extra={
-          //   <Icon
-          //     className="hamburger"
-          //     type="menu"
-          //     style={{ paddingRight: "20px", paddingTop: "20px" }}
-          //   />
-          // }
-        >
+        {/* panel create warning */}
+        <Panel header="" key="1">
           <Row>
             {Object.keys(navbars).map((navbar, id) => (
               <Col key={id}>
