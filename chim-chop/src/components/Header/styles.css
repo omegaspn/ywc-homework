@@ -3,3 +3,17 @@
   top: 0;
   right: 0;
 }
+
+.menuIcon {
+  padding: 18px 16px;
+}
+
+.menuIcon > svg {
+  height: 28px;
+  width: auto;
+  color: #333333;
+}
+
+.ant-collapse-header {
+  padding: 0 !important;
+}

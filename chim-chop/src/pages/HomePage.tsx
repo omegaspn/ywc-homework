@@ -10,10 +10,10 @@ import {
 } from "../components";
 
 interface APIModel {
-  navbarItems?: navbarItem[];
-  duration?: string;
-  detail?: any;
-  condition?: any;
+  navbarItems: navbarItem[];
+  duration: string;
+  detail: string;
+  condition: string;
 }
 
 const init = {

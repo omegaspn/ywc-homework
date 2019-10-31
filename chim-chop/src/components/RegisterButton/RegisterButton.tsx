@@ -6,7 +6,7 @@ import "./styles.css";
 
 export const RegisterButton: FunctionComponent = () => {
   return (
-    <Row type="flex" style={{ padding: "0 15px" }}>
+    <Row type="flex" justify="center" style={{ padding: "0 15px" }}>
       <Button
         type="primary"
         className="registerButton"
@@ -24,7 +24,7 @@ export const RegisterButton: FunctionComponent = () => {
         href="https://regist.ชิมช้อปใช้.com/Register/"
       >
         <Text
-          style={{ fontFamily: "TATSanaSuksaBold" }}
+          style={{ fontFamily: "TATSanaSuksaBold", fontSize: "18px" }}
           dangerouslySetInnerHTML={{ __html: t.blueCardContent }}
         ></Text>
       </Button>

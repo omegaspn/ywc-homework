@@ -1,13 +1,50 @@
+/* mobile S */
+@media (min-width: 0px) and (max-width: 320px) {
+  .registerButton {
+    height: 184px !important;
+    padding: "10px 0";
+  }
+}
+
+/* mobile M */
+@media (min-width: 320px) and (max-width: 375px) {
+  .registerButton {
+    padding: "10px 0";
+  }
+}
+
+/* mobile L */
+@media (min-width: 375px) and (max-width: 425px) {
+  .registerButton {
+    padding: "10px 0";
+  }
+}
+
+/* tablet */
+@media (min-width: 425px) and (max-width: 768px) {
+  .registerButton {
+    padding: "10px 0";
+  }
+}
+
+/* tablet or above */
+@media (min-width: 768px) {
+  .registerButton > span {
+    font-size: 24px !important;
+  }
+}
+
+/* laptop */
+@media (min-width: 768px) {
+  .registerButton {
+    width: 738px !important;
+  }
+}
+
 .registerButton:hover {
   background-color: #fbbc33 !important;
 }
 
 .registerButton {
   border: none !important;
-}
-
-@media (min-width: 0px) and (max-width: 320px) {
-  .registerButton {
-    height: 184px !important;
-  }
 }

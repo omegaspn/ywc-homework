@@ -1,7 +1,7 @@
+/* mobile S */
 @media (min-width: 0px) and (max-width: 320px) {
-  .mainText {
-    text-align: start;
-    padding: 0 10px;
+  .container {
+    padding: 0 30px;
   }
   .banner {
     height: 221px;
@@ -11,10 +11,10 @@
   }
 }
 
+/* mobile M */
 @media (min-width: 320px) and (max-width: 375px) {
-  .mainText {
-    text-align: start;
-    padding: 0 20px;
+  .container {
+    padding: 0 30px;
   }
   .banner {
     height: 221px;
@@ -24,10 +24,10 @@
   }
 }
 
+/* mobile L */
 @media (min-width: 375px) and (max-width: 425px) {
-  .mainText {
-    text-align: start;
-    padding: 0 40px;
+  .container {
+    padding: 0 30px;
   }
   .banner {
     height: 221px;
@@ -37,13 +37,10 @@
   }
 }
 
+/* tablet */
 @media (min-width: 425px) and (max-width: 768px) {
-  .mainText {
-    text-align: start;
-    padding: 0 40px;
-  }
-  .font-highlight {
-    font-size: 36px;
+  .container {
+    padding: 0 39px;
   }
   .banner {
     height: 242px;
@@ -53,13 +50,10 @@
   }
 }
 
+/* laptop */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .mainText {
-    text-align: start;
-    padding: 0 60px;
-  }
-  .font-highlight {
-    font-size: 36px;
+  .container {
+    padding: 0 47px;
   }
   .banner {
     height: 350px;
@@ -69,14 +63,12 @@
   }
 }
 
+/* above laptop */
 @media (min-width: 1024px) {
-  .mainText {
-    text-align: start;
-    padding: 0 70px;
+  .container {
+    padding: 0 165px;
   }
-  .font-highlight {
-    font-size: 36px;
-  }
+
   .banner {
     height: 350px;
   }
@@ -97,10 +89,8 @@
   margin-bottom: -5px;
   transition: all 0.3s ease-out;
   position: relative;
-  /* z-index: 2; */
 }
 
 .thirdPartyContainer:hover img {
   transform: scale(1.2, 1.2);
-  /* z-index: 3; */
 }

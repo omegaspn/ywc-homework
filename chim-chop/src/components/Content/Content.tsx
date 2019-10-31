@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from "react";
 import { t } from "../../i18n";
 import { Row, Col } from "antd";
-import { Image, Text, Duration, RegisterButton, AntText, AntTitle } from "../../components";
+import { Image, Duration, RegisterButton, AntText, AntTitle } from "../../components";
 import "./styles.css";
 
 interface ContentProps {
   duration?: string;
-  detail?: any;
-  condition?: any;
+  detail?: string;
+  condition?: string;
 }
 
 export const Content: FunctionComponent<ContentProps> = ({ duration, detail, condition }) => {
@@ -44,99 +44,128 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
     },
   ];
 
+  const Banner: FunctionComponent = () => (
+    <Row type="flex" justify="space-around" align="middle">
+      <Col
+        className="banner"
+        span={8}
+        style={{
+          backgroundImage:
+            "url(https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-left.png)",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      ></Col>
+      <Col
+        className="banner"
+        span={8}
+        style={{
+          backgroundImage:
+            "url(https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png)",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img
+          alt="example"
+          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/logo/banner.png"}
+          style={{ display: "inline" }}
+        />
+      </Col>
+
+      <Col
+        className="banner"
+        span={8}
+        style={{
+          backgroundImage:
+            "url(https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-right.png)",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      ></Col>
+    </Row>
+  );
+
+  const MainContent: FunctionComponent = () => {
+    return (
+      <Row className="container" gutter={[0, 16]} style={{ margin: "70px 0" }}>
+        <Col>
+          <AntTitle
+            style={{
+              color: "#E6332A",
+              fontFamily: "TATSanaSuksaBold",
+            }}
+            level={2}
+          >
+            {t.highLightText}
+          </AntTitle>
+        </Col>
+        <Col>
+          {detail && (
+            <AntText>
+              <span
+                style={{ fontFamily: "TATSanaSuksa" }}
+                dangerouslySetInnerHTML={{ __html: detail }}
+              ></span>
+            </AntText>
+          )}
+        </Col>
+        <Col>
+          <AntText>
+            <span
+              style={{ fontFamily: "TATSanaSuksaBold" }}
+              dangerouslySetInnerHTML={{ __html: t.conditionTitle }}
+            />
+          </AntText>
+          {condition && (
+            <AntText>
+              <span
+                style={{ fontFamily: "TATSanaSuksa" }}
+                dangerouslySetInnerHTML={{ __html: condition }}
+              />
+            </AntText>
+          )}
+        </Col>
+      </Row>
+    );
+  };
+
   return (
     <>
-      <Row type="flex" justify="space-around" align="middle">
-        <Col
-          className="banner"
-          span={8}
-          style={{
-            backgroundImage:
-              "url(https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-left.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></Col>
-        <Col
-          className="banner"
-          span={8}
-          style={{
-            backgroundImage:
-              "url(https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-center.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <img
-            alt="example"
-            src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/logo/banner.png"}
-            style={{ display: "inline" }}
-          />
-        </Col>
-
-        <Col
-          className="banner"
-          span={8}
-          style={{
-            backgroundImage:
-              "url(https://www.xn--b3caa1e2a7e2b0h2be.com/img/hero_banner/banner-right.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></Col>
-      </Row>
+      <Banner />
       <Row className="registerBox" style={{ margin: "26px 0" }}>
         <Duration duration={duration || ""} />
         <RegisterButton />
       </Row>
-      <Row className="mainText">
-        <AntTitle
-          style={{
-            color: "#E6332A",
-            paddingTop: "20px",
-            paddingBottom: "20px",
-            fontFamily: "TATSanaSuksaBold",
-          }}
-          level={2}
-        >
-          {t.highLightText}
-        </AntTitle>
-
-        <AntText>
-          <span
-            style={{ fontFamily: "TATSanaSuksa" }}
-            dangerouslySetInnerHTML={{ __html: detail }}
-          ></span>
-        </AntText>
-
-        <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-          <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.conditionTitle}</Text>
-        </div>
-
-        <AntText>
-          <span
-            style={{ fontFamily: "TATSanaSuksa" }}
-            dangerouslySetInnerHTML={{ __html: condition }}
-          ></span>
-        </AntText>
-      </Row>
-
-      <Row style={{ textAlign: "center" }}>
+      <MainContent />
+      <Row
+        className="container"
+        style={{ textAlign: "center", margin: "70px 0" }}
+        gutter={[32, 32]}
+      >
         {thirdPartyContact.map((thirdPartyPhone, id) => (
           <a key={id} href={`tel:${thirdPartyPhone.phone}`}>
             <Image src={thirdPartyPhone.url} span={8} xsSpan={24} style={{ width: "100%" }}></Image>
           </a>
         ))}
       </Row>
-      <Row className="thirdPartyContainer" style={{ textAlign: "center" }}>
-        {thirdPartyURL.map((object, id) => (
-          <a key={id} href={object.url} target="_blank" rel="noopener noreferrer">
-            <Image src={object.src} span={4} xsSpan={8} style={{ width: "102px" }}></Image>
-          </a>
-        ))}
+      <Row
+        className="container"
+        style={{ textAlign: "center", margin: "40px 0" }}
+        gutter={[28, 28]}
+      >
+        <Col className="thirdPartyContainer">
+          {/* <div className="thirdPartyContainer"> */}
+          {thirdPartyURL.map((object, id) => (
+            <a key={id} href={object.url} target="_blank" rel="noopener noreferrer">
+              <Image src={object.src} span={4} xsSpan={8}></Image>
+            </a>
+          ))}
+          {/* </div> */}
+        </Col>
       </Row>
     </>
   );

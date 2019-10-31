@@ -1,9 +1,8 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, CSSProperties } from "react";
 
 interface TextProps {
   className?: string;
-  style?: any;
-  // any -> css properties type
+  style?: CSSProperties;
   dangerouslySetInnerHTML?: { __html: string };
 }
 

@@ -16,14 +16,13 @@ interface FooterProps {
 export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
   const RenderFooterDetail: FunctionComponent<RenderFooterDetailProps> = ({ head, detail }) => {
     return (
-      <Row>
+      <Row gutter={[0, 8]}>
         <Col>
           <AntText>
             <span
               style={{
                 fontFamily: "TATSanaSuksa",
                 color: "#E6332A",
-                padding: "15px 0 10px 0",
               }}
               dangerouslySetInnerHTML={{ __html: head }}
             />
@@ -44,7 +43,7 @@ export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
   };
   return (
     <Row>
-      <Row justify="space-around" type="flex" style={{ padding: "24px 50px" }}>
+      <Row justify="space-around" type="flex" style={{ padding: "24px 50px" }} gutter={[0, 16]}>
         <Image
           src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/logo/footer.png"}
           span={4}
@@ -78,12 +77,12 @@ export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
           position: "absolute",
           left: "0",
           right: "0",
-          paddingLeft: "50px",
-          paddingRight: "50px",
+          padding: "15px 50px",
         }}
+        gutter={[0, 16]}
       >
         {/* render first detail */}
-        <Col span={4} xs={24} md={4} lg={4} style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+        <Col span={4} xs={24} md={4} lg={4}>
           <AntText>
             <span style={{ color: "#fff", fontFamily: "TATSanaSuksaBold" }}>
               {t.footerNav.detail}
@@ -101,7 +100,7 @@ export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
                 xs={24}
                 md={4}
                 lg={4}
-                style={{ paddingTop: "10px", paddingBottom: "10px" }}
+                // style={{ paddingTop: "10px", paddingBottom: "10px" }}
               >
                 <AntText>
                   <a

@@ -1,10 +1,12 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, CSSProperties } from "react";
 import { Typography } from "antd";
 
 interface AntTitleProps {
   level?: 1 | 2 | 3 | 4;
-  style?: any;
-  dangerouslySetInnerHTML?: any;
+  style?: CSSProperties;
+  dangerouslySetInnerHTML?: {
+    __html: string;
+  };
 }
 
 export const AntTitle: FunctionComponent<AntTitleProps> = props => {
