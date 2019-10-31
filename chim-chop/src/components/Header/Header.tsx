@@ -18,7 +18,7 @@ export const Header: FunctionComponent<HeaderProps> = ({ navbars }) => {
           position: "fixed",
           left: 0,
           right: 0,
-          zIndex: 3,
+          zIndex: 2,
           display: "flex",
           justifyContent: "space-around",
           border: "none",

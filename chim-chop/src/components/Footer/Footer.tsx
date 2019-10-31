@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Row, Col } from "antd";
-import { Image, Text } from "../../components";
+import { Image, AntText } from "../../components";
 import { t } from "../../i18n";
 import { navbarItem } from "../../types";
 
@@ -18,29 +18,30 @@ export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
     return (
       <Row>
         <Col>
-          <Text
-            style={{
-              fontFamily: "TATSanaSuksa",
-              fontSize: "18px",
-              color: "#E6332A",
-              padding: "15px 0 10px 0",
-            }}
-            dangerouslySetInnerHTML={{ __html: head }}
-          ></Text>
+          <AntText>
+            <span
+              style={{
+                fontFamily: "TATSanaSuksa",
+                color: "#E6332A",
+                padding: "15px 0 10px 0",
+              }}
+              dangerouslySetInnerHTML={{ __html: head }}
+            />
+          </AntText>
         </Col>
         <Col>
-          <Text
-            style={{
-              fontFamily: "TATSanaSuksa",
-              fontSize: "18px",
-            }}
-            dangerouslySetInnerHTML={{ __html: detail }}
-          ></Text>
+          <AntText>
+            <span
+              style={{
+                fontFamily: "TATSanaSuksa",
+              }}
+              dangerouslySetInnerHTML={{ __html: detail }}
+            />
+          </AntText>
         </Col>
       </Row>
     );
   };
-
   return (
     <Row>
       <Row justify="space-around" type="flex" style={{ padding: "24px 50px" }}>
@@ -82,14 +83,12 @@ export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
         }}
       >
         {/* render first detail */}
-        <Col
-          span={4}
-          xs={24}
-          md={4}
-          lg={4}
-          style={{ paddingTop: "10px", paddingBottom: "10px", color: "#fff" }}
-        >
-          <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.footerNav.detail}</Text>
+        <Col span={4} xs={24} md={4} lg={4} style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+          <AntText>
+            <span style={{ color: "#fff", fontFamily: "TATSanaSuksaBold" }}>
+              {t.footerNav.detail}
+            </span>
+          </AntText>
         </Col>
 
         {/* render last 3 details with href */}
@@ -104,17 +103,17 @@ export const Footer: FunctionComponent<FooterProps> = ({ navbars }) => {
                 lg={4}
                 style={{ paddingTop: "10px", paddingBottom: "10px" }}
               >
-                <Text style={{ fontFamily: "TATSanaSuksaBold" }}>
+                <AntText>
                   <a
                     key={id}
                     href={navbars[id - 1].href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: "#fff" }}
+                    style={{ color: "#fff", fontFamily: "TATSanaSuksaBold" }}
                   >
                     {detail}
                   </a>
-                </Text>
+                </AntText>
               </Col>
             ),
         )}

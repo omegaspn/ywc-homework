@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { Row, Col, Collapse, Icon } from "antd";
+import { Row, Col, Collapse } from "antd";
 import { Text } from "../../components";
 import { navbarItem } from "../../types";
 import "./styles.css";

@@ -6,7 +6,7 @@ import "./styles.css";
 
 export const RegisterButton: FunctionComponent = () => {
   return (
-    <Row type="flex" align="middle" justify="center" style={{ padding: "0 15px" }}>
+    <Row type="flex" style={{ padding: "0 15px" }}>
       <Button
         type="primary"
         className="registerButton"
@@ -15,6 +15,7 @@ export const RegisterButton: FunctionComponent = () => {
           height: "fit-content",
           width: "100%",
           boxShadow: "0 15px 30px 0 rgba(28, 78, 132, 0.4)",
+          whiteSpace: "normal",
         }}
         href="https://regist.ชิมช้อปใช้.com/Register/"
       >

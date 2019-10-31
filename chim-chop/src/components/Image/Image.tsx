@@ -2,6 +2,7 @@ import { Col } from "antd";
 import React, { FunctionComponent } from "react";
 
 interface ImageProps {
+  imgClassName?: string;
   src: string;
   span: number;
   xsSpan: number;
@@ -9,14 +10,15 @@ interface ImageProps {
 }
 
 export const Image: FunctionComponent<ImageProps> = ({
+  imgClassName,
   src,
   span,
   xsSpan,
-  style
+  style,
 }) => {
   return (
     <Col span={span} xs={xsSpan} md={span} lg={span}>
-      <img alt="example" src={src} style={style} />
+      <img className={imgClassName} alt="example" src={src} style={style} />
     </Col>
   );
 };

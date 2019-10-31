@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { t } from "../../i18n";
 import { Row, Col } from "antd";
-import { Image, Text, Duration, RegisterButton } from "../../components";
+import { Image, Text, Duration, RegisterButton, AntText, AntTitle } from "../../components";
 import "./styles.css";
 
 interface ContentProps {
@@ -11,6 +11,39 @@ interface ContentProps {
 }
 
 export const Content: FunctionComponent<ContentProps> = ({ duration, detail, condition }) => {
+  const thirdPartyContact = [
+    { url: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_KTB_SQ.png", phone: "021111144" },
+    { url: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_CGD_Sq.png", phone: "022706400" },
+    { url: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_TAT_Hotline_Sq.png", phone: "1672" },
+  ];
+
+  const thirdPartyURL = [
+    {
+      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOF.png",
+      url: "https://www.mof.go.th/th/home",
+    },
+    {
+      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/FPO.png",
+      url: "http://www.fpo.go.th",
+    },
+    {
+      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/CGD.png",
+      url: "https://www.cgd.go.th",
+    },
+    {
+      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOTS.png",
+      url: "https://www.newcb.ktb.co.th",
+    },
+    {
+      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/TAT.png",
+      url: "https://www.mots.go.th",
+    },
+    {
+      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/Krungthai.png",
+      url: "https://thai.tourismthailand.org",
+    },
+  ];
+
   return (
     <>
       <Row type="flex" justify="space-around" align="middle">
@@ -57,96 +90,56 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
         <RegisterButton />
       </Row>
       <Row className="mainText">
-        <div
+        <AntTitle
           style={{
-            fontSize: "32px",
             color: "#E6332A",
             paddingTop: "20px",
             paddingBottom: "20px",
+            fontFamily: "TATSanaSuksaBold",
           }}
+          level={3}
         >
-          <Text className="font-highlight" style={{ fontFamily: "TATSanaSuksaBold" }}>
-            {t.highLightText}
-          </Text>
-        </div>
-        <Text
-          style={{ fontFamily: "TATSanaSuksa" }}
-          dangerouslySetInnerHTML={{ __html: detail }}
-        ></Text>
-        <div />
+          {t.highLightText}
+        </AntTitle>
+
+        <AntText>
+          <span
+            style={{ fontFamily: "TATSanaSuksa" }}
+            dangerouslySetInnerHTML={{ __html: detail }}
+          ></span>
+        </AntText>
+
         <div style={{ marginTop: "20px", marginBottom: "20px" }}>
           <Text style={{ fontFamily: "TATSanaSuksaBold" }}>{t.conditionTitle}</Text>
         </div>
-        <Text
-          style={{ fontFamily: "TATSanaSuksa" }}
-          dangerouslySetInnerHTML={{ __html: condition }}
-        ></Text>
+
+        <AntText>
+          <span
+            style={{ fontFamily: "TATSanaSuksa" }}
+            dangerouslySetInnerHTML={{ __html: condition }}
+          ></span>
+        </AntText>
       </Row>
 
       <Row style={{ textAlign: "center" }}>
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_KTB_SQ.png"}
-          span={8}
-          xsSpan={24}
-          style={{ width: "100%" }}
-        ></Image>
-
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_CGD_Sq.png"}
-          span={8}
-          xsSpan={24}
-          style={{ width: "100%" }}
-        ></Image>
-
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/Banner_TAT_Hotline_Sq.png"}
-          span={8}
-          xsSpan={24}
-          style={{ width: "100%" }}
-        ></Image>
+        {thirdPartyContact.map((thirdPartyPhone, id) => (
+          <a key={id} href={`tel:${thirdPartyPhone.phone}`}>
+            <Image src={thirdPartyPhone.url} span={8} xsSpan={24} style={{ width: "100%" }}></Image>
+          </a>
+        ))}
       </Row>
       <Row style={{ textAlign: "center" }}>
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOF.png"}
-          span={4}
-          xsSpan={8}
-          style={{ width: "102px" }}
-        ></Image>
-
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/FPO.png"}
-          span={4}
-          xsSpan={8}
-          style={{ width: "102px" }}
-        />
-
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/CGD.png"}
-          span={4}
-          xsSpan={8}
-          style={{ width: "102px" }}
-        />
-
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOTS.png"}
-          span={4}
-          xsSpan={8}
-          style={{ width: "102px" }}
-        />
-
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/TAT.png"}
-          span={4}
-          xsSpan={8}
-          style={{ width: "102px" }}
-        />
-
-        <Image
-          src={"https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/Krungthai.png"}
-          span={4}
-          xsSpan={8}
-          style={{ width: "102px" }}
-        />
+        {thirdPartyURL.map((object, id) => (
+          <a key={id} href={object.url} target="_blank" rel="noopener noreferrer">
+            <Image
+              imgClassName="thirdParty"
+              src={object.src}
+              span={4}
+              xsSpan={8}
+              style={{ width: "102px" }}
+            ></Image>
+          </a>
+        ))}
       </Row>
     </>
   );

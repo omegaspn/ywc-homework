@@ -1,8 +1,7 @@
 @media (min-width: 0px) and (max-width: 320px) {
   .mainText {
     text-align: start;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;
   }
   .banner {
     height: 221px;
@@ -12,8 +11,7 @@
 @media (min-width: 320px) and (max-width: 375px) {
   .mainText {
     text-align: start;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
   }
   .banner {
     height: 221px;
@@ -23,8 +21,7 @@
 @media (min-width: 375px) and (max-width: 425px) {
   .mainText {
     text-align: start;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 40px;
   }
   .banner {
     height: 221px;
@@ -32,6 +29,10 @@
 }
 
 @media (min-width: 425px) and (max-width: 768px) {
+  .mainText {
+    text-align: start;
+    padding: 0 40px;
+  }
   .font-highlight {
     font-size: 36px;
   }
@@ -40,11 +41,36 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mainText {
+    text-align: start;
+    padding: 0 60px;
+  }
   .font-highlight {
     font-size: 36px;
   }
   .banner {
-    height: 250px;
+    height: 242px;
   }
+}
+
+@media (min-width: 1024px) {
+  .mainText {
+    text-align: start;
+    padding: 0 70px;
+  }
+  .font-highlight {
+    font-size: 36px;
+  }
+  .banner {
+    height: 242px;
+  }
+}
+
+.thirdParty {
+  transition: 1s;
+}
+
+.thirdParty:hover {
+  transform: scale(1.2);
 }

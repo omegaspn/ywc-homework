@@ -22,31 +22,3 @@
 .App-link {
   color: #09d3ac;
 }
-
-/* mobile S */
-@media (min-width: 0px) and (max-width: 320px) {
-  .font-highlight {
-    font-size: 30px;
-  }
-}
-
-/* mobile M */
-@media (min-width: 320px) and (max-width: 375px) {
-  .font-highlight {
-    font-size: 30px;
-  }
-}
-
-/* mobile L */
-@media (min-width: 375px) and (max-width: 425px) {
-  .font-highlight {
-    font-size: 30px;
-  }
-}
-
-/* tablet or above */
-@media (min-width: 425px) {
-  .font-highlight {
-    font-size: 36px;
-  }
-}
