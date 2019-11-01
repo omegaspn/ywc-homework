@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { t } from "../../i18n";
 import { Row, Col } from "antd";
-import { Image, Duration, RegisterButton, AntTitle } from "../../components";
+import { Image, Duration, RegisterButton, Text } from "../../components";
 import "./styles.css";
 
 interface ContentProps {
@@ -93,15 +93,16 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
     return (
       <Row className="container" gutter={[0, 16]} style={{ margin: "70px 0" }}>
         <Col>
-          <AntTitle
+          <Text
+            className="mainContentRedText"
             style={{
               color: "#E6332A",
               fontFamily: "TATSanaSuksaBold",
+              fontSize: "24px",
             }}
-            level={2}
           >
             {t.highLightText}
-          </AntTitle>
+          </Text>
         </Col>
         <Col>
           {detail && (

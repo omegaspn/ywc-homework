@@ -67,6 +67,9 @@
   .mainContentFont {
     font-size: 18px;
   }
+  .mainContentRedText {
+    font-size: 36px !important;
+  }
 }
 
 /* laptop */
@@ -85,7 +88,7 @@
 /* above laptop */
 @media (min-width: 1024px) {
   .container {
-    padding: 0 165px;
+    padding: 0 160px;
   }
 
   .banner {

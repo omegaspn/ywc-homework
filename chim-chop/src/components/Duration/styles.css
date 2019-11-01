@@ -1,0 +1,26 @@
+/* mobile L or lower */
+@media (min-width: 0px) and (max-width: 425px) {
+  .durationText {
+    font-size: 30px;
+  }
+}
+
+/* tablet */
+@media (min-width: 425px) and (max-width: 768px) {
+  .durationText {
+    font-size: 36px;
+  }
+}
+
+/* tablet or above */
+@media (min-width: 768px) {
+  .durationText {
+    font-size: 48px;
+  }
+}
+
+.durationText {
+  font-family: "TATSanaSuksaBold";
+  color: #e6332a;
+  text-align: "center";
+}

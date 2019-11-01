@@ -19,7 +19,7 @@ export const RegisterButton: FunctionComponent = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          padding: "10px 0",
+          padding: "10px",
         }}
         href="https://regist.ชิมช้อปใช้.com/Register/"
       >
