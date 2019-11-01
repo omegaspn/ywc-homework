@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { t } from "../../i18n";
 import { Row, Col } from "antd";
-import { Image, Duration, RegisterButton, AntText, AntTitle } from "../../components";
+import { Image, Duration, RegisterButton, AntTitle } from "../../components";
 import "./styles.css";
 
 interface ContentProps {
@@ -105,29 +105,32 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
         </Col>
         <Col>
           {detail && (
-            <AntText>
-              <span
-                style={{ fontFamily: "TATSanaSuksa" }}
-                dangerouslySetInnerHTML={{ __html: detail }}
-              ></span>
-            </AntText>
+            <span
+              className="mainContentFont"
+              style={{ fontFamily: "TATSanaSuksa", color: "#333333" }}
+              dangerouslySetInnerHTML={{ __html: detail }}
+            ></span>
           )}
         </Col>
         <Col>
-          <AntText>
-            <span
-              style={{ fontFamily: "TATSanaSuksaBold" }}
-              dangerouslySetInnerHTML={{ __html: t.conditionTitle }}
-            />
-          </AntText>
-          {condition && (
-            <AntText>
+          <Row gutter={[0, 8]}>
+            <Col>
               <span
-                style={{ fontFamily: "TATSanaSuksa" }}
-                dangerouslySetInnerHTML={{ __html: condition }}
+                className="mainContentFont"
+                style={{ fontFamily: "TATSanaSuksaBold", color: "#333333" }}
+                dangerouslySetInnerHTML={{ __html: t.conditionTitle }}
               />
-            </AntText>
-          )}
+            </Col>
+            <Col>
+              {condition && (
+                <span
+                  className="mainContentFont"
+                  style={{ fontFamily: "TATSanaSuksa", color: "#333333" }}
+                  dangerouslySetInnerHTML={{ __html: condition }}
+                />
+              )}
+            </Col>
+          </Row>
         </Col>
       </Row>
     );
@@ -158,13 +161,11 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
         gutter={[28, 28]}
       >
         <Col className="thirdPartyContainer">
-          {/* <div className="thirdPartyContainer"> */}
           {thirdPartyURL.map((object, id) => (
             <a key={id} href={object.url} target="_blank" rel="noopener noreferrer">
               <Image src={object.src} span={4} xsSpan={8}></Image>
             </a>
           ))}
-          {/* </div> */}
         </Col>
       </Row>
     </>
