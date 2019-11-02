@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1db98408bf16f0540b92f9407dd7fcc0",
+    "revision": "5ee541a9e3f9cc6153da9cb7e39cd3f7",
     "url": "/ywc-homework/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ywc-homework/static/css/2.aa7fcd32.chunk.css"
   },
   {
-    "revision": "474958fe02e80d85284e",
-    "url": "/ywc-homework/static/css/main.3bba31ac.chunk.css"
+    "revision": "46807daca865f13875d3",
+    "url": "/ywc-homework/static/css/main.78a69634.chunk.css"
   },
   {
     "revision": "08e8b239fae6c48038d5",
     "url": "/ywc-homework/static/js/2.8b562044.chunk.js"
   },
   {
-    "revision": "474958fe02e80d85284e",
-    "url": "/ywc-homework/static/js/main.ab1e80dc.chunk.js"
+    "revision": "46807daca865f13875d3",
+    "url": "/ywc-homework/static/js/main.d2ec887d.chunk.js"
   },
   {
     "revision": "32fd00e6688e3a7f2236",
