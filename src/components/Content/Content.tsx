@@ -32,15 +32,15 @@ export const Content: FunctionComponent<ContentProps> = ({ duration, detail, con
     },
     {
       src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/Krungthai.png",
-      url: "https://thai.tourismthailand.org",
-    },
-    {
-      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOTS.png",
       url: "https://www.newcb.ktb.co.th",
     },
     {
-      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/TAT.png",
+      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/MOTS.png",
       url: "https://www.mots.go.th",
+    },
+    {
+      src: "https://www.xn--b3caa1e2a7e2b0h2be.com/img/brand-logo/TAT.png",
+      url: "https://thai.tourismthailand.org",
     },
   ];
 
